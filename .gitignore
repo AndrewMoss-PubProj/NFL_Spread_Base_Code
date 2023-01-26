@@ -1,1 +1,7 @@
-**\NFL_Season_2022\**\**
+NFL_Season_2022*
+metadata/*
+Player_Game_Logs/*
+*.csv
+*.json
+venv/*
+.idea/*

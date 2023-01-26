@@ -8,7 +8,11 @@ import os
 # os.chdir(path)
 
 def clean_inputs():
+<<<<<<< HEAD
+    data = nfl.import_schedules(years=[2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017])
+=======
     data = nfl.import_schedules(years=[2013, 2014, 2015, 2016, 2017])
+>>>>>>> 11ca6c88fa16e172aa26b6deae0b78f3105211f9
     data['game_id'] = data['game_id'].replace('SD', 'LAC', regex=True)
     data['game_id'] = data['game_id'].replace('_LA_', '_LAR_', regex=True)
     data['game_id'] = data['game_id'].replace('_LA$', '_LAR', regex=True)
@@ -47,9 +51,15 @@ def clean_inputs():
     elos = elos[elos['location'] !='Neutral'].drop(columns='code_2')
 
     qb_game_frame = pd.DataFrame()
+<<<<<<< HEAD
+    for files in glob.glob('Player_Game_Logs/*/*.csv'):
+        temp = pd.read_csv(files)
+        name = files.split('/')[1].replace('-', ' ').title()
+=======
     for files in glob.glob('Player_Game_Logs\\*\\*.csv'):
         temp = pd.read_csv(files)
         name = files.split('\\')[6].replace('-', ' ').title()
+>>>>>>> 11ca6c88fa16e172aa26b6deae0b78f3105211f9
         temp['name'] = name
         temp.drop('Week', axis=1, inplace=True)
         temp = temp.rename(columns={'Unnamed: 0': 'Week'})
